@@ -1,0 +1,17 @@
+<div class="container main-element">
+	<h1 class="text-center main-text">C'est l'heure du score</h1>
+	<hr>
+
+	<ul class="letters list-inline">
+		<% @answer.each_with_index do |letter, index| %>
+			<li class="letter letter<%=index%> list-inline-item"><%=letter%></li> 
+		<% end %>
+	</ul>
+
+	<hr>
+	<p><%= @score_answer %></p>
+</div>
+
+
+
+

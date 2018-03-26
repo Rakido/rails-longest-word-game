@@ -1,0 +1,28 @@
+<div class="container main-element">
+	<h1 class="text-center main-text">C'est l'heure de jouer</h1>
+	<hr>
+
+	<ul class="letters list-inline">
+    <% @random_letters.each_with_index do |letter, index| %>
+      <li class="letter letter<%=index%> list-inline-item"><%=letter%></li> 
+    <% end %>
+	</ul>
+
+	<form action="/score" class="form-results">
+		<%= hidden_field_tag :grid, @random_letters %>
+		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		<div class="form-group">
+			<label for="game-description"> Trouvez un super mot en anglais.</label>	
+			<div class="form-inline">
+				<input type="text" class="form-control col-6" name="answer"> 
+				<button class="btn btn-danger col-2"> Banco !</button>
+			</div>
+		</div>
+	</form>
+
+
+</div>
+
+
+
+
